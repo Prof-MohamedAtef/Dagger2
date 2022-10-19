@@ -3,6 +3,7 @@ package mo.atef.codingwithnerds.codingwithnerds;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -12,8 +13,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         CoffeeComponent coffeeComponent =DaggerCoffeeComponent.create();
-        coffeeComponent.getCoffee().getCoffeeCup();
-
+        Log.v("onCreate: LogCoffee:",coffeeComponent.getCoffee().getCoffeeCup());
 
     }
 }

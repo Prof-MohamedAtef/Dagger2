@@ -15,6 +15,6 @@ public class Coffee {
     }
 
     public String getCoffeeCup(){
-        return farm.getBeans()+ river.getWater();
+        return farm.getBeans()+" + "+ river.getWater();
     }
 }
