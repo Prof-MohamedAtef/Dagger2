@@ -5,7 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import javax.inject.Inject;
+
 public class MainActivity extends AppCompatActivity {
+
+    @Inject
+    Coffee coffee;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -13,7 +18,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         CoffeeComponent coffeeComponent =DaggerCoffeeComponent.create();
-        Log.v("onCreate: LogCoffee:",coffeeComponent.getCoffee().getCoffeeCup());
+        coffeeComponent.inject(this);
+
+        Log.v("onCreate: LogCoffee:",coffee.getCoffeeCup());
 
     }
 }
