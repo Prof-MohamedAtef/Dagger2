@@ -20,6 +20,7 @@ public class Coffee {
         return farm.getBeans()+" + "+ river.getWater();
     }
 
+    @Inject
     public void connectElectricity(){
         Log.v("AtefLogs", "connecting electricity ...");
     }
