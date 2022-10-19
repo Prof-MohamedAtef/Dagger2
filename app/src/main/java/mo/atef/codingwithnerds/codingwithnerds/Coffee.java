@@ -9,11 +9,11 @@ public class Coffee {
     @Inject
     Farm farm;
 
-    @Inject
     River river;
 
     @Inject
-    public Coffee() {
+    public Coffee(River river) {
+        this.river=river;
     }
 
     public String getCoffeeCup(){
