@@ -20,7 +20,8 @@ public class MainActivity extends AppCompatActivity {
         CoffeeComponent coffeeComponent =DaggerCoffeeComponent.create();
         coffeeComponent.inject(this);
 
-        Log.v("onCreate: LogCoffee:",coffee.getCoffeeCup());
+        coffee.connectElectricity();
+        Log.v("onCreate: AtefLogs:",coffee.getCoffeeCup());
 
     }
 }

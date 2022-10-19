@@ -1,5 +1,7 @@
 package mo.atef.codingwithnerds.codingwithnerds;
 
+import android.util.Log;
+
 import javax.inject.Inject;
 
 public class Coffee {
@@ -16,5 +18,9 @@ public class Coffee {
 
     public String getCoffeeCup(){
         return farm.getBeans()+" + "+ river.getWater();
+    }
+
+    public void connectElectricity(){
+        Log.v("AtefLogs", "connecting electricity ...");
     }
 }
