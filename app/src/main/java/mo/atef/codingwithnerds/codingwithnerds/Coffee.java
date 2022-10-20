@@ -3,6 +3,7 @@ package mo.atef.codingwithnerds.codingwithnerds;
 import android.util.Log;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 
 public class Coffee {
 
@@ -12,17 +13,20 @@ public class Coffee {
 
     River river;
 
-    @Inject
     int sugar;
 
+    int milk;
+
+
     @Inject
-    public Coffee(River river, int sugar) {
+    public Coffee(River river, @Named("sugar") int sugar, @Named("milk") int milk) {
         this.river=river;
         this.sugar=sugar;
+        this.milk=milk;
     }
 
     public String getCoffeeCup(){
-        return farm.getBeans()+" + "+ river.getWater()+ "sugar: "+sugar;
+        return farm.getBeans()+" + "+ river.getWater()+ " + sugar: "+sugar+ " + milk: "+milk;
     }
 
     @Inject
