@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
         AppComponent appComponent =((MainApplication)getApplication()).getAppComponent();
 
-        CoffeeComponent coffeeComponent=DaggerCoffeeComponent.builder().milk(4).sugar(8).appComponent(appComponent).build();
+        CoffeeComponent coffeeComponent=appComponent.getCoffeeComponentBuilder().milk(4).sugar(8).build();
         coffeeComponent.inject(this);
 
         Log.v("onCreate: AtefLogs:",coffee.getCoffeeCup()+
