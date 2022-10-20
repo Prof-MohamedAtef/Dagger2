@@ -20,6 +20,6 @@ public class MainActivity extends AppCompatActivity {
         CoffeeComponent coffeeComponent =((MainApplication)getApplication()).getCoffeeComponent();
         coffeeComponent.inject(this);
 
-        Log.v("onCreate: AtefLogs:",coffee.getCoffeeCup()+"\n farm of coffee 1 : "+coffee.farm + "\n farm of coffee 2 : "+coffee2.farm);
+        Log.v("onCreate: AtefLogs:",coffee.getCoffeeCup()+"\n farm of coffee 1 : "+coffee.river + "\n farm of coffee 2 : "+coffee2.river);
     }
 }
