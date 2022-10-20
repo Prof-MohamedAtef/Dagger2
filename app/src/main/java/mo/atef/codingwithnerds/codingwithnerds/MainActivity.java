@@ -10,7 +10,7 @@ import javax.inject.Inject;
 public class MainActivity extends AppCompatActivity {
 
     @Inject
-    Coffee coffee;
+    Coffee coffee, coffee2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
                 DaggerCoffeeComponent.builder().sugar(7).milk(9).build();
         coffeeComponent.inject(this);
 
-        Log.v("onCreate: AtefLogs:",coffee.getCoffeeCup());
-
+        Log.v("onCreate: AtefLogs:",coffee.getCoffeeCup()+"\n farm of coffee 1 : "+coffee.farm + "\n farm of coffee 2 : "+coffee2.farm);
     }
 }
