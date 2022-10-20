@@ -17,9 +17,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        CoffeeComponent coffeeComponent =((MainApplication)getApplication()).getCoffeeComponent();
+        AppComponent appComponent =((MainApplication)getApplication()).getAppComponent();
+
+        CoffeeComponent coffeeComponent=DaggerCoffeeComponent.builder().milk(4).sugar(8).appComponent(appComponent).build();
         coffeeComponent.inject(this);
 
-        Log.v("onCreate: AtefLogs:",coffee.getCoffeeCup()+"\n farm of coffee 1 : "+coffee.river + "\n farm of coffee 2 : "+coffee2.river);
+        Log.v("onCreate: AtefLogs:",coffee.getCoffeeCup()+
+                "\ncoffee 1 : "+coffee+
+                "\ncoffee 2 : "+coffee2
+                +"\n river of coffee 1 : "+coffee.river
+                + "\n river of coffee 2 : "+coffee2.river);
     }
 }
